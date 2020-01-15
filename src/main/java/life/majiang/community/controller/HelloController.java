@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HelloController {
 
-    //
-    @GetMapping("/hello")
-    public String hello(@RequestParam(name = "name") String name, Model model){
-        model.addAttribute("name",name);
-        return "hello";
+    //什么都不输入的时候返回根目录，也就是index目录
+    @GetMapping("/")
+    public String index(){
+        return "index";
     }
 }
